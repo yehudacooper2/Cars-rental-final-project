@@ -91,6 +91,8 @@ namespace _04_UIL.Controllers
         //This function deletes an order by calling the DeleteOrderByCarNumber()  function from the OrderManager.
 
         // DELETE: api/Order/carNumber
+        [Authorize(Roles = "manager")]
+
         public HttpResponseMessage Delete(string carNumber)
         {
             bool deleteResult = OrderManager.DeleteOrderByCarNumber(carNumber);

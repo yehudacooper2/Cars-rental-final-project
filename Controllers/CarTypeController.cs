@@ -86,6 +86,8 @@ namespace _04_UIL.Controllers
         //This function deletes a carType by calling the DeleteCarTypeByModel()  function from the CarTypeManager.
 
         // DELETE: api/CarType/carModel
+        [Authorize(Roles = "manager")]
+
         public HttpResponseMessage Delete(string carModel)
         {
             bool deleteResult = CarTypeManager.DeleteCarTypeByModel(carModel);

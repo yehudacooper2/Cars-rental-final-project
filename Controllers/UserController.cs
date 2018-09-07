@@ -88,6 +88,8 @@ namespace _04_UIL.Controllers
 
         //This function deletes a user by calling the DeleteUserByName(userName)  function from the UserManager.
         // DELETE: api/User/userName
+        [Authorize(Roles = "manager")]
+
         public HttpResponseMessage Delete(string userName)
         {
             bool deleteResult = UserManager.DeleteUserByName(userName);

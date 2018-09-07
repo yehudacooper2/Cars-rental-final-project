@@ -86,6 +86,8 @@ namespace _04_UIL.Controllers
         //This function deletes a car by calling the DeleteCarByCarNumber()  function from the CarManager.
 
         // DELETE: api/Car/carNumber
+        [Authorize(Roles = "manager")]
+
         public HttpResponseMessage Delete(string carNumber)
         {
             bool deleteResult = CarManager.DeleteCarByCarNumber(carNumber);
