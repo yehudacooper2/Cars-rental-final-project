@@ -24,6 +24,8 @@ namespace _04_UIL.Controllers
     {
 
         // GET: api/Branch
+        [AllowAnonymous]
+
         public HttpResponseMessage Get()
         {
             return new HttpResponseMessage(HttpStatusCode.OK)
@@ -33,6 +35,8 @@ namespace _04_UIL.Controllers
         }
 
         // GET: api/Branch/branchName
+        [AllowAnonymous]
+
         public HttpResponseMessage Get(string branchName)
         {
             BranchModel branch = BranchManager.SelectBranchByName(branchName);

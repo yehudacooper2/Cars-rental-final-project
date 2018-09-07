@@ -16,6 +16,13 @@ namespace BOL
             double incNum = 0;
             a = Convert.ToString(value);
 
+            if (a.Length < 9)
+            {
+                while (a.Length < 9)
+                {
+                    a = '0' + a;
+                }
+            }
             for (int i = 0; i < 9; i++)
             {
                 incNum = Convert.ToUInt32(a[i].ToString());

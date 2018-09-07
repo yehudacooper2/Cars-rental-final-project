@@ -25,6 +25,8 @@ namespace _04_UIL.Controllers
         // This function gets all orders by calling to the SelectAllOrders() function from the OrderManager. 
 
         // GET: api/Order
+        [AllowAnonymous]
+
         public HttpResponseMessage Get()
         {
             return new HttpResponseMessage(HttpStatusCode.OK)
@@ -35,6 +37,8 @@ namespace _04_UIL.Controllers
         // This function gets a specific order by calling to the SelectOrderByCarNumber() function from the OrderManager.  
 
         // GET: api/Order/carNumber
+        [AllowAnonymous]
+
         public HttpResponseMessage Get(string carNumber)
         {
             OrderModel order = OrderManager.SelectOrderByCarNumber(carNumber);
@@ -50,6 +54,8 @@ namespace _04_UIL.Controllers
         //This function adds a new order by calling the InsertOrder() function from the OrderManager.
 
         // POST: api/Order
+        [AllowAnonymous]
+
         public HttpResponseMessage Post([FromBody]OrderModel value)
         {
             bool insertResult = false;

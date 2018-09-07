@@ -48,6 +48,8 @@ namespace _04_UIL.Controllers
         }
         //This function adds a new user by calling the InsertUser() function from the UserManager.
         //POST  : api/User
+        [AllowAnonymous]
+
         public HttpResponseMessage Post([FromBody]UserModel value)
         {
             //ModelState is the parameter that we got to the Post function (value in our case)
